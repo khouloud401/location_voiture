@@ -1,0 +1,19 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}mise a jour  d'une Voiture{% endblock %}
+
+{% block body %}
+    <h1>mise a jour d'une Voiture</h1>
+
+    {# Le formulaire est affiché. L'action par défaut est de soumettre
+       à la même route, ce qui correspond à l'action du contrôleur. #}
+    <form method="post">
+
+        {{ form_widget(formV) }}
+
+        {# Bouton de soumission  #}
+        <input type="submit" value="mise a jour Voiture">
+
+    </form>
+{% endblock %}

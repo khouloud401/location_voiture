@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mt-5">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="text-primary">Liste des Voitures</h1>
+        </div>
+
+        <table class="table table-striped table-bordered table-hover shadow-sm">
+            <thead class="table-dark">
+            <tr>
+                <th>Serie</th>
+                <th>Date Mise en Marche</th>
+                <th>Modele</th>
+                <th>Prix </th>
+                <th class="text-center">Actions</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for v in listeVoiture %}
+                <tr>
+                    <td>{{ v.Serie }}</td>
+                    <td>{{ v.DateMiseEnMarche }}</td>
+                    <td>{{ v.Modele }}</td>
+                    <td>{{ v.PrixJour }}</td>
+                    <td class="text-center"></td>
+                    <td><a href="{{ path("voitureDelete",{'id':v.id}) }}">Supprimer</a></td>
+                    <td><a href="{{ path("voitureUpdate",{'id':v.id}) }}">Mettre a jourè</a></td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}

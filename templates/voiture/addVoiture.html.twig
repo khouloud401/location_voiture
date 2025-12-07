@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une Voiture{% endblock %}
+
+{% block body %}
+    <h1>Ajout d'une nouvelle Voiture</h1>
+
+    {#
+    Le formulaire est affiché en utilisant la variable
+    'formV' qui est passée depuis le contrôleur
+    La méthode "post" est essentielle pour envoyer les données.
+    #}
+    <form method="post">
+        {# Affichage du formulaire   #}
+        {{ form_widget(formV) }}
+
+        {# Bouton de confirmation du formulaire   #}
+        <input type="submit" value="addVoiture">
+    </form>
+
+    {# Vous pouvez ajouter un lien pour revenir à la liste si vous le souhaitez #}
+    <a href="{{ path('app_voiture') }}">Retour à la liste</a>
+{% endblock %}
